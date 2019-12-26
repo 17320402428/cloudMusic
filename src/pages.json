@@ -34,7 +34,7 @@
         "selectedIconPath":"./static/icon/yonghu.png"
       }
     ],
-    "backgroundColor":"#3372DF",
+    "backgroundColor":"#2f2f2f",
     "color":"#dbe8db",
     "selectedColor":"#c20c0c"
   }
