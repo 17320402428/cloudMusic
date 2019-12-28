@@ -44,16 +44,16 @@ export default {
 </script>
 <style lang="less" scoped>
 .title_wraper {
-  height: 100rpx;
+  height: 90rpx;
   line-height: 100rpx;
   display: flex;
   justify-content: space-between;
   .title_l {
     font-weight: 700;
-    font-size: 40rpx;
+    font-size: 35rpx;
   }
   .title_r {
-    font-size: 30rpx;
+    font-size: 26rpx;
     color: #666;
   }
 }

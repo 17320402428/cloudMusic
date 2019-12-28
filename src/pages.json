@@ -11,6 +11,20 @@
       "style": {
         "navigationBarTitleText": "我的"
       }
+    },
+		{
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationBarBackgroundColor": "#3b3b3b"
+      }
+    },
+		{
+      "path": "pages/search/index",
+      "style": {
+        "navigationBarTitleText": "搜索",
+        "navigationBarBackgroundColor": "#c20c0c"
+      }
     }
   ],
   "globalStyle": {
@@ -18,24 +32,5 @@
     "navigationBarTitleText": "网易云音乐",
     "navigationBarBackgroundColor": "#c20c0c",
     "backgroundColor": "#F8F8F8"
-	},
-	"tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath":"./static/icon/wangyiyun1.png",
-        "selectedIconPath":"./static/icon/wangyiyun.png"
-      },
-      {
-        "pagePath": "pages/user/user",
-        "text": "我的",
-        "iconPath":"./static/icon/yonghu1.png",
-        "selectedIconPath":"./static/icon/yonghu.png"
-      }
-    ],
-    "backgroundColor":"#2f2f2f",
-    "color":"#dbe8db",
-    "selectedColor":"#c20c0c"
-  }
+	 }
 }

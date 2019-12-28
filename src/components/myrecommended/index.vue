@@ -1,13 +1,15 @@
-<!-- 热门歌单页 -->
+<!-- 推荐电台页 -->
 <template>
   <view class="hot_misc">
-    <navigator v-for="item in personalizedlist" :key="item.id" class="hot_nav">
+    <navigator v-for="item in radioList" :key="item.id" class="hot_nav">
       <view class="hot_misc_item">
         <view class="img">
           <image :src="item.picUrl"></image>
           <view class="bottom">
             <text class="b_l iconfont icon-shouting"></text>
-            <text class="b_r">{{ item.playCount | handleNumber}}</text>
+            <text class="b_r">{{
+              item.program.listenerCount | handleNumber
+            }}</text>
           </view>
         </view>
         <view class="text">
@@ -28,7 +30,7 @@ export default {
   data() {
     //这里存放数据
     return {
-      personalizedlist: [] // 推荐歌单
+      radioList: [] // 新碟列表
     }
   },
   //监听属性 类似于data概念
@@ -37,19 +39,19 @@ export default {
   watch: {},
   //方法集合
   methods: {
-    // 推荐歌单
-    async getPersonalizedList() {
+    async getradioList() {
       const res = await this.$http({
-        url: "/personalized?limit=6"
+        url: "/personalized/djprogram"
       })
       if (res.code === 200) {
-        this.personalizedlist = res.result
+        this.radioList = res.result
       }
+      // console.log(res)
     }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-    this.getPersonalizedList()
+    this.getradioList()
   }
 }
 </script>
@@ -61,7 +63,6 @@ export default {
   .hot_nav {
     flex: 26%;
     .hot_misc_item {
-      width: 100%;
       .img {
         width: 228rpx;
         height: 228rpx;
@@ -93,20 +94,14 @@ export default {
       }
       .text {
         .songName {
-          height: 88rpx;
-          line-height: 40rpx;
           display: block;
-          font-size: 24rpx;
+          font-size: 30rpx;
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 2;
-        }
-        .songComposer {
-          display: block;
-          font-size: 25rpx;
-          color: #666;
+          font-size: 14px;
         }
       }
     }
