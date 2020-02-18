@@ -7,8 +7,8 @@
           <image :src="item.blurPicUrl"></image>
         </view>
         <view class="text">
-          <text class="songName">{{item.name}}</text>
-          <text class="songComposer">{{item.artist.name}}</text>
+          <text class="songName">{{ item.name }}</text>
+          <text class="songComposer">{{ item.artist.name }}</text>
         </view>
       </view>
     </navigator>
@@ -25,7 +25,7 @@ export default {
   data() {
     //这里存放数据
     return {
-      newdishList:[] // 新碟列表
+      newdishList: [] // 新碟列表
     }
   },
   //监听属性 类似于data概念
@@ -34,12 +34,12 @@ export default {
   watch: {},
   //方法集合
   methods: {
-    async getnewdishList(){
+    async getnewdishList() {
       const res = await this.$http({
-        url:"/album/newest"
+        url: "/album/newest"
       })
-      if(res.code ===200){
-        this.newdishList = res.albums.slice(0,6)
+      if (res.code === 200) {
+        this.newdishList = res.albums.slice(0, 6)
       }
     }
   },
@@ -71,6 +71,11 @@ export default {
         .songName {
           display: block;
           font-size: 30rpx;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
         }
         .songComposer {
           display: block;

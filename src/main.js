@@ -10,7 +10,7 @@ Vue.config.productionTip = false
 // })
 Vue.filter('handleNumber',handleNumber)
 const plugin = request({
-  baseUrl: "http://netmusic.vip:3000"
+  baseUrl: "https://api.netmusic.vip"
 })
 Vue.use(plugin)
 const app = new Vue({

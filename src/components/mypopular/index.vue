@@ -1,13 +1,13 @@
 <!-- 热门歌单页 -->
 <template>
   <view class="hot_misc">
-    <navigator v-for="item in personalizedlist" :key="item.id" class="hot_nav">
+    <navigator v-for="item in personalizedlist" :key="item.id"  class="hot_nav">
       <view class="hot_misc_item">
         <view class="img">
           <image :src="item.picUrl"></image>
           <view class="bottom">
             <text class="b_l iconfont icon-shouting"></text>
-            <text class="b_r">{{ item.playCount | handleNumber}}</text>
+            <text class="b_r">{{ item.playCount | handleNumber }}</text>
           </view>
         </view>
         <view class="text">
@@ -77,7 +77,7 @@ export default {
           line-height: 40rpx;
           bottom: 0;
           // opacity: 0.2;
-          background-color: rgba(000, 000, 000, 0.2);
+          background-color: rgba(000, 000, 000, 0.5);
           background-position: 0 -537px;
           color: #fff;
           .b_l {

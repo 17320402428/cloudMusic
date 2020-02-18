@@ -1,3 +1,4 @@
 export default function number (config) {
-  return (config/10000).toFixed(1)+'万'
+  if(config>=10000) return (config/10000).toFixed(1)+'万'
+  return config
 }
